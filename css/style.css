@@ -3788,3 +3788,6 @@ form .form-group input:-ms-input-placeholder {
 footer{
 	display:none;
 }
+#index_slider {
+    z-index: 2;
+}
