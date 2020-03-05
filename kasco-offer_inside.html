@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>КАСКО</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+    
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+    <script src="js/swiper.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script> 
+  
+</head>
+	<body class="js-loading">
+       <div id="loader">
+            <div class="spinner">
+				<svg class="loader" viewBox="0 0 340 340">
+                     <circle cx="170" cy="170" r="160" stroke="#1487CF"/>
+                     <circle cx="170" cy="170" r="135" stroke="#FFD83A"/>
+                     <circle cx="170" cy="170" r="110" stroke="#1487CF"/>
+                     <circle cx="170" cy="170" r="85" stroke="#FFD83A"/>
+                </svg>
+            </div>
+        </div><!--/Loader-->
+        
+        <div id="main">
+            <div id="wrapper">
+                <header>
+                	<div class="header_top">
+                    	<div class="container">
+                        	<div class="row flex_j-space-between">
+                            	<div class="flex">
+                                	<a href="#" class="logo">
+										<svg width="125" height="40" viewBox="0 0 125 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="l1">
+											<path d="M92.8565 0H116.512C118.762 0.00307941 120.92 0.887761 122.511 2.46008C124.102 4.03239 124.997 6.16403 125 8.38761V31.6124C124.997 33.836 124.102 35.9676 122.511 37.5399C120.92 39.1122 118.762 39.9969 116.512 40H8.48764C6.23753 39.9969 4.08048 39.1122 2.48941 37.5399C0.898347 35.9676 0.00311613 33.836 0 31.6124L0 8.38761C0.00311613 6.16403 0.898347 4.03239 2.48941 2.46008C4.08048 0.887761 6.23753 0.00307941 8.48764 0H93.1435V1.17661H8.48764C6.55339 1.17995 4.69933 1.94075 3.33161 3.29235C1.96389 4.64395 1.19402 6.47616 1.19064 8.38761V31.6124C1.19402 33.5238 1.96389 35.356 3.33161 36.7076C4.69933 38.0593 6.55339 38.82 8.48764 38.8234H116.512C118.447 38.82 120.301 38.0593 121.668 36.7076C123.036 35.356 123.806 33.5238 123.809 31.6124V8.38761C123.806 6.47616 123.036 4.64395 121.668 3.29235C120.301 1.94075 118.447 1.17995 116.512 1.17661H92.8565V0Z" fill="url(#paint0_linear)"/>
+											<defs>
+												<linearGradient id="paint0_linear" x1="0" y1="20" x2="125" y2="20" gradientUnits="userSpaceOnUse">
+													<stop stop-color="#FFD83A">
+														<animate attributeName="stop-color" values="#FFD83A; #1487CF; #FFD83A;" dur="2s" repeatCount="indefinite" />
+													</stop>
+													<stop offset="0.74" stop-color="#1487CF">
+														<animate attributeName="stop-color" values="#1487CF; #FFD83A; #1487CF;" dur="2s" repeatCount="indefinite" />
+													</stop>
+													<stop offset="1" stop-color="#1487CF">
+														<animate attributeName="stop-color" values="#1487CF;#FFD83A;#1487CF;" dur="2s" repeatCount="indefinite" />
+													</stop>
+												</linearGradient>
+											</defs>
+										</svg>
+
+										<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l2">
+                                            <path d="M2.28559 14.9519H0.630663C0.573881 14.952 0.51768 14.9406 0.465517 14.9184C0.413354 14.8963 0.366333 14.8638 0.327348 14.823C0.288363 14.7822 0.258238 14.7339 0.238827 14.6812C0.219416 14.6285 0.21113 14.5724 0.214478 14.5164V7.45766C0.214478 7.34858 0.258326 7.24397 0.336376 7.16684C0.414426 7.08971 0.520284 7.04638 0.630663 7.04638H4.97607C5.5112 7.05738 6.03189 6.87441 6.43985 6.53201C6.84782 6.18961 7.11483 5.71147 7.1905 5.18785C7.22984 4.89337 7.20498 4.59397 7.11759 4.30976C7.03019 4.02556 6.88229 3.76311 6.6838 3.54005C6.48531 3.31698 6.24084 3.13845 5.96678 3.01645C5.69272 2.89445 5.39543 2.83179 5.09484 2.83268H0.510912C0.400533 2.83268 0.294674 2.78935 0.216624 2.71222C0.138574 2.63509 0.0947266 2.53048 0.0947266 2.4214V0.85873C0.0947266 0.749651 0.138574 0.64504 0.216624 0.56791C0.294674 0.49078 0.400533 0.447449 0.510912 0.447449H4.89166C6.05241 0.437333 7.17692 0.846578 8.05377 1.59824C8.93063 2.34991 9.49944 3.39222 9.65326 4.52922C9.71644 5.16011 9.64523 5.79708 9.44421 6.39912C9.2432 7.00116 8.91684 7.55493 8.48614 8.02478C8.05544 8.49463 7.52994 8.87015 6.94349 9.12715C6.35704 9.38415 5.72263 9.51694 5.0811 9.51697H3.11796C3.00758 9.51697 2.90172 9.5603 2.82367 9.63743C2.74562 9.71457 2.70178 9.81918 2.70178 9.92826V14.5164C2.70513 14.5724 2.69684 14.6285 2.67743 14.6812C2.65802 14.7339 2.62789 14.7822 2.58891 14.823C2.54992 14.8638 2.5029 14.8963 2.45074 14.9184C2.39857 14.9406 2.34237 14.952 2.28559 14.9519Z" fill="#1487CF" />
+                                        </svg>
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l3">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.88326 12.5323C10.5938 12.5323 12.7911 10.3608 12.7911 7.68225C12.7911 5.00366 10.5938 2.83223 7.88326 2.83223C5.17273 2.83223 2.97541 5.00366 2.97541 7.68225C2.97541 10.3608 5.17273 12.5323 7.88326 12.5323ZM7.88326 14.9573C11.9491 14.9573 15.245 11.7001 15.245 7.68225C15.245 3.66436 11.9491 0.407227 7.88326 0.407227C3.81746 0.407227 0.521484 3.66436 0.521484 7.68225C0.521484 11.7001 3.81746 14.9573 7.88326 14.9573Z" fill="#1487CF" />
+                                        </svg>
+                                        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l4">
+                                            <path d="M8.37955 14.9504H0.379748C0.275493 14.936 0.180667 14.883 0.114368 14.8022C0.0480691 14.7213 0.0152265 14.6187 0.0224581 14.5149V0.847562C0.0120695 0.74186 0.0434576 0.636283 0.110054 0.552933C0.176651 0.469583 0.273292 0.414922 0.379748 0.400391H2.03468C2.14506 0.400391 2.25091 0.443722 2.32896 0.520852C2.40701 0.597982 2.45086 0.702593 2.45086 0.811672V12.0346C2.45086 12.1437 2.49471 12.2483 2.57276 12.3254C2.65081 12.4026 2.75667 12.4459 2.86705 12.4459H8.31967C8.43005 12.4459 8.53591 12.4892 8.61396 12.5663C8.69201 12.6435 8.73585 12.7481 8.73585 12.8572V14.5159C8.74309 14.6197 8.71024 14.7223 8.64394 14.8031C8.57765 14.8839 8.48282 14.9369 8.37856 14.9514L8.37955 14.9504Z" fill="#1487CF" />
+                                        </svg>
+                                        <svg width="3" height="15" viewBox="0 0 3 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l5">
+                                            <path d="M2.3459 0.446289H0.544721C0.354984 0.446289 0.201172 0.598289 0.201172 0.78579V14.6122C0.201172 14.7997 0.354984 14.9517 0.544721 14.9517H2.3459C2.53564 14.9517 2.68945 14.7997 2.68945 14.6122V0.78579C2.68945 0.598289 2.53564 0.446289 2.3459 0.446289Z" fill="#1487CF" />
+                                        </svg>
+                                        <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l6">
+                                            <path d="M10.5574 3.48144C10.4955 3.56297 10.4053 3.61893 10.3041 3.63846C10.2029 3.658 10.098 3.63972 10.0097 3.58717C8.81794 2.91009 7.42186 2.67259 6.06964 2.91689C4.87899 3.17589 3.62945 4.16432 4.59728 5.37585C5.20487 6.14021 6.76361 6.35264 7.63328 6.71737C8.9076 7.08464 10.0562 7.789 10.9549 8.75437C12.6815 11.1076 10.8244 14.1864 8.16922 14.7538C5.73415 15.1397 3.2402 14.6367 1.15295 13.3386C1.10802 13.3073 1.06981 13.2675 1.04053 13.2215C1.01124 13.1756 0.991464 13.1243 0.982338 13.0707C0.973211 13.0172 0.974915 12.9623 0.987352 12.9094C0.999788 12.8565 1.02271 12.8065 1.0548 12.7624L1.69772 11.8681C1.74378 11.8008 1.80951 11.7489 1.88614 11.7194C1.96278 11.69 2.04668 11.6843 2.12667 11.7032C3.61473 12.033 10.4602 13.3968 9.07913 10.5266C8.60307 9.25586 5.50818 8.75049 4.41275 8.23251C2.43685 7.32653 1.10289 5.24393 2.11489 3.11478C3.69816 -0.225914 8.56675 0.204768 11.2572 1.93816C11.3039 1.96949 11.3435 2.00986 11.3739 2.05681C11.4043 2.10376 11.4246 2.15631 11.4338 2.21128C11.443 2.26625 11.4408 2.32249 11.4273 2.37659C11.4138 2.43069 11.3894 2.48151 11.3554 2.52598L10.5574 3.48144Z" fill="#1487CF" />
+                                        </svg>
+                                        <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="l7">
+                                            <path d="M10.4387 0.400391H8.77008C8.6597 0.400391 8.55384 0.443722 8.47579 0.520852C8.39774 0.597982 8.3539 0.702593 8.3539 0.811672V9.80942C8.35251 10.2309 8.25607 10.6467 8.07158 11.0267C7.8871 11.4067 7.61922 11.7412 7.28743 12.006C6.95564 12.2708 6.56828 12.4592 6.15355 12.5574C5.73882 12.6557 5.30714 12.6613 4.88993 12.5739C4.23933 12.4308 3.65832 12.071 3.24439 11.5547C2.83046 11.0385 2.60881 10.3972 2.61662 9.73861V0.847562C2.61662 0.738484 2.57277 0.633873 2.49472 0.556743C2.41667 0.479612 2.31081 0.43628 2.20043 0.43628H0.570046C0.459667 0.43628 0.353802 0.479612 0.275752 0.556743C0.197702 0.633873 0.153857 0.738484 0.153857 0.847562V9.62318C0.135376 10.9285 0.595024 12.1965 1.44807 13.1933C2.30111 14.1902 3.49005 14.8487 4.79571 15.0474C5.55015 15.1443 6.31681 15.0812 7.04467 14.8624C7.77253 14.6437 8.44489 14.2742 9.01701 13.7787C9.58914 13.2831 10.0479 12.6729 10.3628 11.9885C10.6777 11.3041 10.8414 10.5612 10.8432 9.80942V0.847562C10.8481 0.79158 10.8415 0.735182 10.8235 0.68185C10.8056 0.628519 10.7768 0.579387 10.7389 0.537484C10.701 0.495581 10.6548 0.461797 10.6032 0.438218C10.5516 0.41464 10.4956 0.401765 10.4387 0.400391Z" fill="url(#paint0_linear)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="-0.391943" y1="7.76065" x2="22.8405" y2="7.76065" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#1487CF" />
+                                                    <stop offset="1" stop-color="#FFD83A" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l8">
+                                            <path d="M13.9493 14.4222L9.98574 0.611313C9.95995 0.527949 9.90803 0.454839 9.83746 0.402535C9.76689 0.350231 9.68132 0.321438 9.59311 0.320312H5.42635C5.33815 0.321438 5.25258 0.350231 5.18201 0.402535C5.11144 0.454839 5.05951 0.527949 5.03372 0.611313L0.911133 14.9518H3.16874C3.25695 14.9507 3.34251 14.9219 3.41308 14.8696C3.48365 14.8173 3.53558 14.7442 3.56137 14.6608L4.75201 10.5199C4.7778 10.4365 4.82973 10.3634 4.9003 10.3111C4.97087 10.2588 5.05643 10.23 5.14464 10.2289H9.83458C9.92279 10.23 10.0083 10.2588 10.0789 10.3111C10.1495 10.3634 10.2014 10.4365 10.2272 10.5199L11.4179 14.6608C11.4436 14.7442 11.4956 14.8173 11.5661 14.8696C11.6367 14.9219 11.7223 14.9507 11.8105 14.9518H13.5243C13.5907 14.9546 13.6567 14.9417 13.717 14.9141C13.7773 14.8865 13.83 14.845 13.8707 14.7932C13.9115 14.7413 13.9391 14.6806 13.9512 14.6161C13.9633 14.5515 13.9597 14.4851 13.9405 14.4222H13.9493ZM8.90209 7.7515H6.09284C6.02877 7.75188 5.96548 7.73763 5.9079 7.70987C5.85031 7.68211 5.79999 7.64159 5.76086 7.59146C5.72172 7.54133 5.69482 7.48295 5.68226 7.42087C5.6697 7.35878 5.67181 7.29467 5.68843 7.23352L6.87907 3.0693C6.90051 2.97916 6.9521 2.89881 7.02549 2.84124C7.09889 2.78368 7.18978 2.75227 7.28348 2.75211H7.73598C7.8262 2.75074 7.91443 2.77838 7.98737 2.83086C8.06031 2.88335 8.11402 2.95784 8.14039 3.04311L9.33104 7.20733C9.35308 7.27194 9.35853 7.34095 9.34688 7.40815C9.33524 7.47535 9.30687 7.53864 9.26433 7.59232C9.22179 7.646 9.16641 7.68838 9.10318 7.71566C9.03995 7.74294 8.97085 7.75426 8.90209 7.74859V7.7515Z" fill="url(#paint0_linear)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="-12.3969" y1="7.62163" x2="10.84" y2="7.62163" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#1487CF" />
+                                                    <stop offset="1" stop-color="#FFD83A" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </a><!-- /logo -->
+                                    
+                                    <nav>
+                                    	<ul class="hover_line">
+                                        	<li class="active"><a href="#">Частным лицам</a></li>
+                                            <li><a href="#">Бизнесу</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                                <div class="flex">
+                                	<a href="#" class="contacts">Контакты</a>
+                                
+                                    <div class="language-block">
+                                        <form id="form-language">
+                                            <button class="language-select active" type="button" name="RU">RU</button>
+                                            <button class="language-select" type="button" name="UA">UA</button>
+                                        </form>
+                                    </div>
+                                
+                                    <div id="header_compare">
+                                        <div class="compare_show">
+                                            <div class="ico">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.9592 12.2101L23.9388 12.2208L20.4956 3.17235H22.0667C22.3484 3.17235 22.5768 2.93119 22.5768 2.63375C22.5768 2.33631 22.3484 2.09515 22.0667 2.09515H12.4667V0.5386C12.4667 0.241158 12.2383 0 11.9566 0C11.6749 0 11.4465 0.241158 11.4465 0.5386V2.08977H1.85165C1.56995 2.08977 1.34155 2.33092 1.34155 2.62837C1.34155 2.92581 1.56995 3.16697 1.85165 3.16697H3.48905L0.0408077 12.2101C0.0153029 12.2731 0.00146653 12.3408 0 12.4093C0 14.8827 1.89896 16.8878 4.24145 16.8878C6.58393 16.8878 8.48289 14.8827 8.48289 12.4093C8.48142 12.3408 8.46759 12.2731 8.44208 12.2101L4.99894 3.16158H11.4465V19.8151C9.01339 20.009 7.11073 21.5709 7.11073 23.4614C7.11073 23.7588 7.33913 24 7.62083 24H16.2925C16.5742 24 16.8026 23.7588 16.8026 23.4614C16.8026 21.5709 14.8999 20.009 12.4667 19.8151V3.16158H18.9807L15.5579 12.2101C15.5324 12.2731 15.5186 12.3408 15.5171 12.4093C15.5171 14.8827 17.4161 16.8878 19.7586 16.8878C22.101 16.8878 24 14.8827 24 12.4093C23.9985 12.3408 23.9847 12.2731 23.9592 12.2101ZM4.2389 15.8187C2.659 15.8164 1.3135 14.6055 1.061 12.9587H7.39639C7.14517 14.5975 5.81107 15.8059 4.2389 15.8187ZM7.21275 11.8815H1.27524L4.2491 4.06643L7.21275 11.8815ZM15.6905 22.9228H8.21764C8.59511 21.7648 10.1509 20.8707 11.9515 20.8707C13.7522 20.8707 15.3131 21.7648 15.6905 22.9228ZM19.7356 4.07181L22.6993 11.8815H16.7617L19.7356 4.07181ZM19.7356 15.8187V15.8241C18.1618 15.8108 16.8271 14.5996 16.5781 12.9587H22.9135C22.661 14.6055 21.3155 15.8164 19.7356 15.8187Z" fill="#788392"/>
+</svg>
+                                            </div>
+                                            <div class="value">1</div>
+                                        </div>
+                                        <div class="compare-block">
+                                            <div class="head">
+                                                <div class="ico">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.9592 12.2101L23.9388 12.2208L20.4956 3.17235H22.0667C22.3484 3.17235 22.5768 2.93119 22.5768 2.63375C22.5768 2.33631 22.3484 2.09515 22.0667 2.09515H12.4667V0.5386C12.4667 0.241158 12.2383 0 11.9566 0C11.6749 0 11.4465 0.241158 11.4465 0.5386V2.08977H1.85165C1.56995 2.08977 1.34155 2.33092 1.34155 2.62837C1.34155 2.92581 1.56995 3.16697 1.85165 3.16697H3.48905L0.0408077 12.2101C0.0153029 12.2731 0.00146653 12.3408 0 12.4093C0 14.8827 1.89896 16.8878 4.24145 16.8878C6.58393 16.8878 8.48289 14.8827 8.48289 12.4093C8.48142 12.3408 8.46759 12.2731 8.44208 12.2101L4.99894 3.16158H11.4465V19.8151C9.01339 20.009 7.11073 21.5709 7.11073 23.4614C7.11073 23.7588 7.33913 24 7.62083 24H16.2925C16.5742 24 16.8026 23.7588 16.8026 23.4614C16.8026 21.5709 14.8999 20.009 12.4667 19.8151V3.16158H18.9807L15.5579 12.2101C15.5324 12.2731 15.5186 12.3408 15.5171 12.4093C15.5171 14.8827 17.4161 16.8878 19.7586 16.8878C22.101 16.8878 24 14.8827 24 12.4093C23.9985 12.3408 23.9847 12.2731 23.9592 12.2101ZM4.2389 15.8187C2.659 15.8164 1.3135 14.6055 1.061 12.9587H7.39639C7.14517 14.5975 5.81107 15.8059 4.2389 15.8187ZM7.21275 11.8815H1.27524L4.2491 4.06643L7.21275 11.8815ZM15.6905 22.9228H8.21764C8.59511 21.7648 10.1509 20.8707 11.9515 20.8707C13.7522 20.8707 15.3131 21.7648 15.6905 22.9228ZM19.7356 4.07181L22.6993 11.8815H16.7617L19.7356 4.07181ZM19.7356 15.8187V15.8241C18.1618 15.8108 16.8271 14.5996 16.5781 12.9587H22.9135C22.661 14.6055 21.3155 15.8164 19.7356 15.8187Z" fill="#788392"/></svg>
+                                                </div>
+                                                <div class="tit">Лист сравнения</div>
+                                            </div>
+                                            <a href="#" class="list flex">
+                                                <p>КАСКО (3)</p>
+                                                <span class="remove"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.00122 1L16.9995 17" stroke="#CCCCCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.9983 1L0.999999 17" stroke="#CCCCCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            </a>
+                                            <div class="btn-block">
+                                                <a href="#" class="btn"><span>перейти к сравнению</span><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 1L5 5L1 9" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                            </div>
+                                            <div class="empty">Ничего не добавлено</div>                                    
+                                        </div>
+                                    </div>
+                                
+                                    
+                                    <div class="login">
+                                        <a href="#" class="btn">
+                                            <span>Войти</span>
+                                        </a>
+                                    </div>
+                                    
+                                    <div id="mob_menu"><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1H15M1 6H10M1 11H5" stroke="#374656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                    
+                                 </div>
+                            </div>
+                        </div><!--container-->
+                    </div>
+                    
+                    <div class="header_bottom">
+                    	<div class="container">
+                        	<div class="row flex_j-space-between"> 
+                                <div id="navigation">
+                                    <div class="main_menu">
+                                        <ul class="navigation-menu">
+                                            <li class="has-submenu active">
+                                                <a href="#">Страхование <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 1L5 5L1 1" stroke="#374656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                                <div class="submenu">
+                                                    <div class="container">
+                                                        <div class="row flex_j-space-between">
+                                                            <ul>
+                                                                <li><a href="#">Осаго</a></li>
+                                                                <li><a href="#">Туристическое страхование</a></li>
+                                                                <li><a href="#">Каско</a></li>
+                                                                <li><a href="#">Зеленая карта</a></li>
+                                                            </ul>
+                                                            <div class="row">
+                                                                <div class="item">
+                                                                	<div class="img"><img src="img/1.jpg" alt=""/></div>
+                                                                    <div class="flex flex_j-space-between">
+                                                                    	<div class="tit">осаго</div>
+                                                                		<div class="value">от 600 грн</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item">
+                                                                	<div class="img"><img src="img/2.jpg" alt=""/></div>
+                                                                    <div class="flex flex_j-space-between">
+                                                                    	<div class="tit">Європа, Турція,<br/> Єгипет</div>
+                                                                		<div class="value">от 50 грн</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#">Талоны на топливо</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Онлайн-кредиты</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Кредитные карты</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Категория</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Реферальная программа</a>
+                                            </li>
+                                            <li class="has-submenu menu-more">
+                                                <a href="#">еще <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 1L5 5L1 1" stroke="#374656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                                <div class="submenu">
+                                                    <div class="container">
+                                                        <ul>
+                                                            <li><a href="#">Кредитные карты</a></li>
+                                                            <li><a href="#">Категория</a></li>
+                                                            <li><a href="#">Реферальная программа</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- End navigation menu -->
+                                
+                                <div id="search" class="form-group search">
+                                    <div class="input-group">
+                                        <input type="search" name="search" placeholder="Поиск" value="" class="form-control">
+                                        <button type="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4088 6.70438C11.4088 9.30253 9.30253 11.4088 6.70438 11.4088C4.10622 11.4088 2 9.30253 2 6.70438C2 4.10622 4.10622 2 6.70438 2C9.30253 2 11.4088 4.10622 11.4088 6.70438ZM10.6875 12.0978C9.5738 12.9217 8.19597 13.4088 6.70438 13.4088C3.00165 13.4088 0 10.4071 0 6.70438C0 3.00165 3.00165 0 6.70438 0C10.4071 0 13.4088 3.00165 13.4088 6.70438C13.4088 8.19597 12.9217 9.5738 12.0978 10.6875C12.1164 10.7035 12.1345 10.7203 12.1522 10.7379L15.7077 14.2935C16.0982 14.684 16.0982 15.3172 15.7077 15.7077C15.3172 16.0982 14.684 16.0982 14.2935 15.7077L10.7379 12.1522C10.7203 12.1345 10.7035 12.1164 10.6875 12.0978Z" fill="#788392"/></svg></button>
+                                    </div>
+                                    <div class="show-search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4088 6.70438C11.4088 9.30253 9.30253 11.4088 6.70438 11.4088C4.10622 11.4088 2 9.30253 2 6.70438C2 4.10622 4.10622 2 6.70438 2C9.30253 2 11.4088 4.10622 11.4088 6.70438ZM10.6875 12.0978C9.5738 12.9217 8.19597 13.4088 6.70438 13.4088C3.00165 13.4088 0 10.4071 0 6.70438C0 3.00165 3.00165 0 6.70438 0C10.4071 0 13.4088 3.00165 13.4088 6.70438C13.4088 8.19597 12.9217 9.5738 12.0978 10.6875C12.1164 10.7035 12.1345 10.7203 12.1522 10.7379L15.7077 14.2935C16.0982 14.684 16.0982 15.3172 15.7077 15.7077C15.3172 16.0982 14.684 16.0982 14.2935 15.7077L10.7379 12.1522C10.7203 12.1345 10.7035 12.1164 10.6875 12.0978Z" fill="#788392"/></svg></div>
+                                </div>
+                            </div>
+                        </div><!--container-->
+                    </div>
+                </header>
+                
+                <section id="bread_crumbs">
+                    <div class="container">
+                    	<ul class="flex">
+                        	<li><a href="#">Главная</a></li>    
+                            <li>/</li>    
+                            <li><a href="#">Страхование</a></li>    
+                            <li>/</li>
+                            <li>КАСКО</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="banner">
+                	<div class="bg-svg"></div>
+					<div class="container">
+                    	<div class="txt">
+                        	<h1>КАСКО онлайн за 1 мин от лидеров рынка</h1>
+                            <div class="step-block">
+                            	<div class="item">
+                                	<div class="number">01</div>
+                                    <div class="value"><p>Определелите рыночную<br/> стоимость авто</p></div>
+                                </div>
+                                <div class="arrow"><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.8" d="M1 1L9 9L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="item">
+                                	<div class="number">02</div>
+                                    <div class="value"><p>Введите данные <br/>об авто и водителе</p></div>
+                                </div>
+                                <div class="arrow"><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.8" d="M1 1L9 9L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="item">
+                                	<div class="number">03</div>
+                                    <div class="value"><p>Сравните предложения<br/> от страховых компаний</p></div>
+                                </div>
+                                <div class="arrow"><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.8" d="M1 1L9 9L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="item">
+                                	<div class="number">04</div>
+                                    <div class="value"><p>Оформите заявки <br/>и получите полис</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- container -->
+                </section>
+                
+                <section id="kasco_offer-parameters" class="container">
+                    <div class="row">
+                        <div class="left-block">
+                            <h3 class="tit">Ваши параметры:</h3>
+                            <a href="#" class="back-calculation">Изменить</a>
+                        </div>
+                        
+                        <div class="right-block">
+                            <div class="flex">
+                                <div class="item-parameters">
+                                    <div class="tit">Марка авто</div>
+                                    <div class="value">Audi </div>
+                                </div>
+                                <div class="item-parameters">
+                                    <div class="tit">Модель авто</div>
+                                    <div class="value">Q3 </div>
+                                </div>
+                                <div class="item-parameters">
+                                    <div class="tit">Год выпуска</div>
+                                    <div class="value">2020</div>
+                                </div>
+                                <div class="item-parameters">
+                                    <div class="tit">Обьем двигателя</div>
+                                    <div class="value">до 1 600 см3 включительно</div>
+                                </div>
+                                <div class="item-parameters">
+                                    <div class="tit">Вид топлива</div>
+                                    <div class="value">Гибрид</div>
+                                </div>
+                                <div class="item-parameters">
+                                    <div class="tit">Трансмисия</div>
+                                    <div class="value">Q3</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Пробег</div>
+                                    <div class="value">50 000 км</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Водители</div>
+                                    <div class="value">Неограничено</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Мин. возраст водителя</div>
+                                    <div class="value">18 лет</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Мин. стаж водителя</div>
+                                    <div class="value">1 год</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Такси</div>
+                                    <div class="value">Нет</div>
+                                </div>
+                                <div class="item-parameters parameters-hide">
+                                    <div class="tit">Авто в кредите у банка?</div>
+                                    <div class="value">Нет</div>
+                                </div>
+                            </div>
+                            <div class="btn btn-show"><p><span class="txt-show">показать все</span><span class="txt-hide">свернуть все</span></p><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L5 5.17391L1 1" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 1L5 5.17391L1 1" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                            
+                            <script>
+                                $(document).on("ready", function () {
+                                    $("#kasco_offer-parameters .btn").click(function () {
+                                        $(this).toggleClass('btn-hide');
+                                        $(".parameters-hide").toggleClass('parameters-show');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="kasco_offer" class="container kasco_offer-inside">
+                    <a href="#" class="btn-back"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#374656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>вернуться назад</a>
+                    
+                    <div class="row">
+                        <div class="left-block">
+                            <div class="kasco_offer-block">
+                            
+                                <div class="kasco_offer-item">
+                                	<div class="action-block flex flex_j-space-between">
+                                    	<div class="flex">
+                                        	<div class="tit">акция</div>
+                                            <h2>Получи <span class="color-blue">10% кешбэка</span> по Промокоду «ALFA»</h2>
+                                        </div>
+                                        <div class="date">до 01.03.2020</div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="company">
+                                            <div class="logo-company"><img src="img/8.png" alt=""/></div>
+                                        </div><!-- company -->
+                                        
+                                        <div class="company-info">
+                                            <div class="txt">
+                                                <div class="tit">Полис КАСКО</div>
+                                                <h2>Страховая группа ТАС</h2>
+                                                <p>Профессиональная компания с  20-летним опытом на рынке страхования предлагает лучшие тарифы на максимально выгодных условиях по доступным тарифам</p>
+                                            </div>
+                                            
+                                            <div class="rating">
+                                                <div class="row">
+                                                    <div>
+                                                        <p>Рейтинг МТСБУ</p>
+                                                        <div class="flex">
+                                                            <div class="star-block">
+                                                                <div class="star">
+                                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50867 0.33676L10.5424 4.65109C10.5832 4.73777 10.6433 4.81265 10.7175 4.86932C10.7916 4.92599 10.8776 4.96274 10.9682 4.97644L15.516 5.66805C15.62 5.6829 15.7179 5.72846 15.7986 5.79954C15.8792 5.87061 15.9394 5.96431 15.9721 6.06991C16.0048 6.17552 16.0089 6.28875 15.9837 6.39665C15.9585 6.50455 15.9051 6.60276 15.8297 6.68002L12.5394 10.0383C12.4737 10.105 12.4246 10.1877 12.3962 10.2792C12.3677 10.3708 12.361 10.4683 12.3764 10.5632L13.1535 15.3057C13.1703 15.4157 13.1578 15.5284 13.1174 15.6312C13.077 15.7341 13.0104 15.8229 12.9249 15.8878C12.8395 15.9527 12.7387 15.9911 12.6338 15.9986C12.5289 16.0062 12.4241 15.9825 12.3312 15.9304L8.26375 13.6919C8.18226 13.6471 8.0918 13.6238 8 13.6238C7.9082 13.6238 7.81774 13.6471 7.73625 13.6919L3.67257 15.9304C3.57968 15.9823 3.475 16.0057 3.37027 15.998C3.26554 15.9903 3.16489 15.9519 3.0796 15.8871C2.99432 15.8222 2.92778 15.7334 2.88743 15.6308C2.84708 15.5281 2.83453 15.4155 2.85117 15.3057L3.62736 10.5632C3.643 10.4684 3.63641 10.3709 3.60816 10.2793C3.57991 10.1878 3.53086 10.105 3.46534 10.0383L0.170311 6.68002C0.0948887 6.60276 0.0415278 6.50455 0.0163389 6.39665C-0.00884995 6.28875 -0.00484844 6.17552 0.0278852 6.06991C0.0606189 5.96431 0.120761 5.87061 0.201426 5.79954C0.28209 5.72846 0.380016 5.6829 0.483989 5.66805L5.03184 4.97644C5.12319 4.96351 5.21018 4.9271 5.28521 4.8704C5.36024 4.81369 5.42104 4.7384 5.46232 4.65109L7.49228 0.33676C7.53866 0.235789 7.6109 0.150671 7.70077 0.0911234C7.79063 0.0315762 7.89448 0 8.00047 0C8.10646 0 8.21032 0.0315762 8.30018 0.0911234C8.39004 0.150671 8.46228 0.235789 8.50867 0.33676Z" fill="#FFD63B"/>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="star">
+                                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50867 0.33676L10.5424 4.65109C10.5832 4.73777 10.6433 4.81265 10.7175 4.86932C10.7916 4.92599 10.8776 4.96274 10.9682 4.97644L15.516 5.66805C15.62 5.6829 15.7179 5.72846 15.7986 5.79954C15.8792 5.87061 15.9394 5.96431 15.9721 6.06991C16.0048 6.17552 16.0089 6.28875 15.9837 6.39665C15.9585 6.50455 15.9051 6.60276 15.8297 6.68002L12.5394 10.0383C12.4737 10.105 12.4246 10.1877 12.3962 10.2792C12.3677 10.3708 12.361 10.4683 12.3764 10.5632L13.1535 15.3057C13.1703 15.4157 13.1578 15.5284 13.1174 15.6312C13.077 15.7341 13.0104 15.8229 12.9249 15.8878C12.8395 15.9527 12.7387 15.9911 12.6338 15.9986C12.5289 16.0062 12.4241 15.9825 12.3312 15.9304L8.26375 13.6919C8.18226 13.6471 8.0918 13.6238 8 13.6238C7.9082 13.6238 7.81774 13.6471 7.73625 13.6919L3.67257 15.9304C3.57968 15.9823 3.475 16.0057 3.37027 15.998C3.26554 15.9903 3.16489 15.9519 3.0796 15.8871C2.99432 15.8222 2.92778 15.7334 2.88743 15.6308C2.84708 15.5281 2.83453 15.4155 2.85117 15.3057L3.62736 10.5632C3.643 10.4684 3.63641 10.3709 3.60816 10.2793C3.57991 10.1878 3.53086 10.105 3.46534 10.0383L0.170311 6.68002C0.0948887 6.60276 0.0415278 6.50455 0.0163389 6.39665C-0.00884995 6.28875 -0.00484844 6.17552 0.0278852 6.06991C0.0606189 5.96431 0.120761 5.87061 0.201426 5.79954C0.28209 5.72846 0.380016 5.6829 0.483989 5.66805L5.03184 4.97644C5.12319 4.96351 5.21018 4.9271 5.28521 4.8704C5.36024 4.81369 5.42104 4.7384 5.46232 4.65109L7.49228 0.33676C7.53866 0.235789 7.6109 0.150671 7.70077 0.0911234C7.79063 0.0315762 7.89448 0 8.00047 0C8.10646 0 8.21032 0.0315762 8.30018 0.0911234C8.39004 0.150671 8.46228 0.235789 8.50867 0.33676Z" fill="#FFD63B"/>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="star">
+                                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50867 0.33676L10.5424 4.65109C10.5832 4.73777 10.6433 4.81265 10.7175 4.86932C10.7916 4.92599 10.8776 4.96274 10.9682 4.97644L15.516 5.66805C15.62 5.6829 15.7179 5.72846 15.7986 5.79954C15.8792 5.87061 15.9394 5.96431 15.9721 6.06991C16.0048 6.17552 16.0089 6.28875 15.9837 6.39665C15.9585 6.50455 15.9051 6.60276 15.8297 6.68002L12.5394 10.0383C12.4737 10.105 12.4246 10.1877 12.3962 10.2792C12.3677 10.3708 12.361 10.4683 12.3764 10.5632L13.1535 15.3057C13.1703 15.4157 13.1578 15.5284 13.1174 15.6312C13.077 15.7341 13.0104 15.8229 12.9249 15.8878C12.8395 15.9527 12.7387 15.9911 12.6338 15.9986C12.5289 16.0062 12.4241 15.9825 12.3312 15.9304L8.26375 13.6919C8.18226 13.6471 8.0918 13.6238 8 13.6238C7.9082 13.6238 7.81774 13.6471 7.73625 13.6919L3.67257 15.9304C3.57968 15.9823 3.475 16.0057 3.37027 15.998C3.26554 15.9903 3.16489 15.9519 3.0796 15.8871C2.99432 15.8222 2.92778 15.7334 2.88743 15.6308C2.84708 15.5281 2.83453 15.4155 2.85117 15.3057L3.62736 10.5632C3.643 10.4684 3.63641 10.3709 3.60816 10.2793C3.57991 10.1878 3.53086 10.105 3.46534 10.0383L0.170311 6.68002C0.0948887 6.60276 0.0415278 6.50455 0.0163389 6.39665C-0.00884995 6.28875 -0.00484844 6.17552 0.0278852 6.06991C0.0606189 5.96431 0.120761 5.87061 0.201426 5.79954C0.28209 5.72846 0.380016 5.6829 0.483989 5.66805L5.03184 4.97644C5.12319 4.96351 5.21018 4.9271 5.28521 4.8704C5.36024 4.81369 5.42104 4.7384 5.46232 4.65109L7.49228 0.33676C7.53866 0.235789 7.6109 0.150671 7.70077 0.0911234C7.79063 0.0315762 7.89448 0 8.00047 0C8.10646 0 8.21032 0.0315762 8.30018 0.0911234C8.39004 0.150671 8.46228 0.235789 8.50867 0.33676Z" fill="#FFD63B"/>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="star">
+                                                                    <svg width="16px" height="16px">
+                                                                        <g id="Design-Tasks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <g id="half">
+                                                                                <path d="M8.50867,0.33676 L10.5424,4.65109 C10.5832,4.73777 10.6433,4.81265 10.7175,4.86932 C10.7916,4.92599 10.8776,4.96274 10.9682,4.97644 L15.516,5.66805 C15.62,5.6829 15.7179,5.72846 15.7986,5.79954 C15.8792,5.87061 15.9394,5.96431 15.9721,6.06991 C16.0048,6.17552 16.0089,6.28875 15.9837,6.39665 C15.9585,6.50455 15.9051,6.60276 15.8297,6.68002 L12.5394,10.0383 C12.4737,10.105 12.4246,10.1877 12.3962,10.2792 C12.3677,10.3708 12.361,10.4683 12.3764,10.5632 L13.1535,15.3057 C13.1703,15.4157 13.1578,15.5284 13.1174,15.6312 C13.077,15.7341 13.0104,15.8229 12.9249,15.8878 C12.8395,15.9527 12.7387,15.9911 12.6338,15.9986 C12.5289,16.0062 12.4241,15.9825 12.3312,15.9304 L8.26375,13.6919 C8.18226,13.6471 8.0918,13.6238 8,13.6238 C7.9082,13.6238 7.81774,13.6471 7.73625,13.6919 L3.67257,15.9304 C3.57968,15.9823 3.475,16.0057 3.37027,15.998 C3.26554,15.9903 3.16489,15.9519 3.0796,15.8871 C2.99432,15.8222 2.92778,15.7334 2.88743,15.6308 C2.84708,15.5281 2.83453,15.4155 2.85117,15.3057 L3.62736,10.5632 C3.643,10.4684 3.63641,10.3709 3.60816,10.2793 C3.57991,10.1878 3.53086,10.105 3.46534,10.0383 L0.170311003,6.68002 C0.0948887027,6.60276 0.0415278027,6.50455 0.0163389027,6.39665 C-0.00884994727,6.28875 -0.00484843727,6.17552 0.0278852027,6.06991 C0.0606189027,5.96431 0.120761003,5.87061 0.201426003,5.79954 C0.282090003,5.72846 0.380016003,5.6829 0.483989003,5.66805 L5.03184,4.97644 C5.12319,4.96351 5.21018,4.9271 5.28521,4.8704 C5.36024,4.81369 5.42104,4.7384 5.46232,4.65109 L7.49228,0.33676 C7.53866,0.235789 7.6109,0.150671 7.70077,0.0911234 C7.79063,0.0315762 7.89448,-2.1564972e-12 8.00047,-2.1564972e-12 C8.10646,-2.1564972e-12 8.21032,0.0315762 8.30018,0.0911234 C8.39004,0.150671 8.46228,0.235789 8.50867,0.33676 Z" id="Path-Copy-6" fill="#E6ECF2"></path>
+                                                                                <path d="M8,5 L8,13.6238 C8,13.6238 7.81774,13.6471 7.73625,13.6919 L3.67257,15.9304 C3.57968,15.9823 3.475,16.0057 3.37027,15.998 C3.26554,15.9903 3.16489,15.9519 3.0796,15.8871 C2.99432,15.8222 2.92778,15.7334 2.88743,15.6308 C2.84708,15.5281 2.83453,15.4155 2.85117,15.3057 L3.62736,10.5632 C3.643,10.4684 3.63641,10.3709 3.60816,10.2793 C3.57991,10.1878 3.53086,10.105 3.46534,10.0383 L0.170311003,6.68002 C0.0948887027,6.60276 0.0415278027,6.50455 0.0163389027,6.39665 C-0.00884994727,6.28875 -0.00484843727,6.17552 0.0278852027,6.06991 C0.0606189027,5.96431 0.120761003,5.87061 0.201426003,5.79954 C0.282090003,5.72846 0.380016003,5.6829 0.483989003,5.66805 L5.03184,4.97644 C5.12319,4.96351 5.21018,4.9271 5.28521,4.8704 C5.36024,4.81369 5.42104,4.7384 5.46232,4.65109 L7.49228,0.33676 C7.53866,0.235789 7.6109,0.150671 7.70077,0.0911235 C7.79063,0.0315763 7.89448,-2.96029867e-12 8.00047,-2.96029867e-12 L8,1 L8,5 Z" id="Path" fill="#FFD63B"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="star">
+                                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50867 0.33676L10.5424 4.65109C10.5832 4.73777 10.6433 4.81265 10.7175 4.86932C10.7916 4.92599 10.8776 4.96274 10.9682 4.97644L15.516 5.66805C15.62 5.6829 15.7179 5.72846 15.7986 5.79954C15.8792 5.87061 15.9394 5.96431 15.9721 6.06991C16.0048 6.17552 16.0089 6.28875 15.9837 6.39665C15.9585 6.50455 15.9051 6.60276 15.8297 6.68002L12.5394 10.0383C12.4737 10.105 12.4246 10.1877 12.3962 10.2792C12.3677 10.3708 12.361 10.4683 12.3764 10.5632L13.1535 15.3057C13.1703 15.4157 13.1578 15.5284 13.1174 15.6312C13.077 15.7341 13.0104 15.8229 12.9249 15.8878C12.8395 15.9527 12.7387 15.9911 12.6338 15.9986C12.5289 16.0062 12.4241 15.9825 12.3312 15.9304L8.26375 13.6919C8.18226 13.6471 8.0918 13.6238 8 13.6238C7.9082 13.6238 7.81774 13.6471 7.73625 13.6919L3.67257 15.9304C3.57968 15.9823 3.475 16.0057 3.37027 15.998C3.26554 15.9903 3.16489 15.9519 3.0796 15.8871C2.99432 15.8222 2.92778 15.7334 2.88743 15.6308C2.84708 15.5281 2.83453 15.4155 2.85117 15.3057L3.62736 10.5632C3.643 10.4684 3.63641 10.3709 3.60816 10.2793C3.57991 10.1878 3.53086 10.105 3.46534 10.0383L0.170311 6.68002C0.0948887 6.60276 0.0415278 6.50455 0.0163389 6.39665C-0.00884995 6.28875 -0.00484844 6.17552 0.0278852 6.06991C0.0606189 5.96431 0.120761 5.87061 0.201426 5.79954C0.28209 5.72846 0.380016 5.6829 0.483989 5.66805L5.03184 4.97644C5.12319 4.96351 5.21018 4.9271 5.28521 4.8704C5.36024 4.81369 5.42104 4.7384 5.46232 4.65109L7.49228 0.33676C7.53866 0.235789 7.6109 0.150671 7.70077 0.0911234C7.79063 0.0315762 7.89448 0 8.00047 0C8.10646 0 8.21032 0.0315762 8.30018 0.0911234C8.39004 0.150671 8.46228 0.235789 8.50867 0.33676Z" fill="#E6ECF2"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <p>4.5 <a href="#">(154 оценок)</a></p>
+                                                        </div>
+                                                    </div>
+                                                	<a href="#" class="review-company">Отзывы о компании <span>(541)</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- item -->
+                                
+                                <div class="kasco_offer-item kasco_offer-tariff">
+                                	<div class="company-tariff row">
+                                        <div class="tariff-item">
+                                            <div class="txt">
+                                                <h3>Пакет</h3>
+                                                <div class="tit"><h3>«Лайт»</h3></div>
+                                            </div>
+                                            <table>
+                                                <tr>
+                                                    <td>Франшиза</td>
+                                                    <td>1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Угон</td>
+                                                    <td>10%</td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <ul>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <div class="btn btn-show"><p><span class="txt-show">показать все</span><span class="txt-hide">свернуть</span></p><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L5 5.17391L1 1" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 1L5 5.17391L1 1" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                                            </ul>
+                                            
+                                            <div class="bottom">
+                                            	<div class="price">2 050,01 грн</div>
+                                                <div class="flex">
+                                                	<button class="btn">Выбрать</button>
+                                                    <div class="tariff-compare">
+                                                        <div class="tooltips">Добавить в сравнения</div>
+                                                        <div class="ico">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M23.9592 12.2101L23.9388 12.2208L20.4956 3.17235H22.0667C22.3484 3.17235 22.5768 2.93119 22.5768 2.63375C22.5768 2.33631 22.3484 2.09515 22.0667 2.09515H12.4667V0.5386C12.4667 0.241158 12.2383 0 11.9566 0C11.6749 0 11.4465 0.241158 11.4465 0.5386V2.08977H1.85165C1.56995 2.08977 1.34155 2.33092 1.34155 2.62837C1.34155 2.92581 1.56995 3.16697 1.85165 3.16697H3.48905L0.0408077 12.2101C0.0153029 12.2731 0.00146653 12.3408 0 12.4093C0 14.8827 1.89896 16.8878 4.24145 16.8878C6.58393 16.8878 8.48289 14.8827 8.48289 12.4093C8.48142 12.3408 8.46759 12.2731 8.44208 12.2101L4.99894 3.16158H11.4465V19.8151C9.01339 20.009 7.11073 21.5709 7.11073 23.4614C7.11073 23.7588 7.33913 24 7.62083 24H16.2925C16.5742 24 16.8026 23.7588 16.8026 23.4614C16.8026 21.5709 14.8999 20.009 12.4667 19.8151V3.16158H18.9807L15.5579 12.2101C15.5324 12.2731 15.5186 12.3408 15.5171 12.4093C15.5171 14.8827 17.4161 16.8878 19.7586 16.8878C22.101 16.8878 24 14.8827 24 12.4093C23.9985 12.3408 23.9847 12.2731 23.9592 12.2101ZM4.2389 15.8187C2.659 15.8164 1.3135 14.6055 1.061 12.9587H7.39639C7.14517 14.5975 5.81107 15.8059 4.2389 15.8187ZM7.21275 11.8815H1.27524L4.2491 4.06643L7.21275 11.8815ZM15.6905 22.9228H8.21764C8.59511 21.7648 10.1509 20.8707 11.9515 20.8707C13.7522 20.8707 15.3131 21.7648 15.6905 22.9228ZM19.7356 4.07181L22.6993 11.8815H16.7617L19.7356 4.07181ZM19.7356 15.8187V15.8241C18.1618 15.8108 16.8271 14.5996 16.5781 12.9587H22.9135C22.661 14.6055 21.3155 15.8164 19.7356 15.8187Z" fill="#788392"></path>
+															</svg>
+                                                        </div>
+                                                        <div class="ok"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M9 1.33398L3.56 6.66732L1 4.15751" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="tariff-item">
+                                            <div class="txt">
+                                                <h3>Пакет</h3>
+                                                <div class="tit"><h3>«Популярный»</h3></div>
+                                            </div>
+                                            <table>
+                                                <tr>
+                                                    <td>Франшиза</td>
+                                                    <td>1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Угон</td>
+                                                    <td>10%</td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <ul>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <div class="btn btn-show"><p><span class="txt-show">показать все</span><span class="txt-hide">свернуть</span></p><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L5 5.17391L1 1" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 1L5 5.17391L1 1" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                                            </ul>
+                                            
+                                            <div class="bottom">
+                                            	<div class="price">2 050,01 грн</div>
+                                                <div class="flex">
+                                                	<button class="btn">Выбрать</button>
+                                                   
+                                                    <div class="tariff-compare">
+                                                        <div class="tooltips">Добавить в сравнения</div>
+                                                        <div class="ico">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M23.9592 12.2101L23.9388 12.2208L20.4956 3.17235H22.0667C22.3484 3.17235 22.5768 2.93119 22.5768 2.63375C22.5768 2.33631 22.3484 2.09515 22.0667 2.09515H12.4667V0.5386C12.4667 0.241158 12.2383 0 11.9566 0C11.6749 0 11.4465 0.241158 11.4465 0.5386V2.08977H1.85165C1.56995 2.08977 1.34155 2.33092 1.34155 2.62837C1.34155 2.92581 1.56995 3.16697 1.85165 3.16697H3.48905L0.0408077 12.2101C0.0153029 12.2731 0.00146653 12.3408 0 12.4093C0 14.8827 1.89896 16.8878 4.24145 16.8878C6.58393 16.8878 8.48289 14.8827 8.48289 12.4093C8.48142 12.3408 8.46759 12.2731 8.44208 12.2101L4.99894 3.16158H11.4465V19.8151C9.01339 20.009 7.11073 21.5709 7.11073 23.4614C7.11073 23.7588 7.33913 24 7.62083 24H16.2925C16.5742 24 16.8026 23.7588 16.8026 23.4614C16.8026 21.5709 14.8999 20.009 12.4667 19.8151V3.16158H18.9807L15.5579 12.2101C15.5324 12.2731 15.5186 12.3408 15.5171 12.4093C15.5171 14.8827 17.4161 16.8878 19.7586 16.8878C22.101 16.8878 24 14.8827 24 12.4093C23.9985 12.3408 23.9847 12.2731 23.9592 12.2101ZM4.2389 15.8187C2.659 15.8164 1.3135 14.6055 1.061 12.9587H7.39639C7.14517 14.5975 5.81107 15.8059 4.2389 15.8187ZM7.21275 11.8815H1.27524L4.2491 4.06643L7.21275 11.8815ZM15.6905 22.9228H8.21764C8.59511 21.7648 10.1509 20.8707 11.9515 20.8707C13.7522 20.8707 15.3131 21.7648 15.6905 22.9228ZM19.7356 4.07181L22.6993 11.8815H16.7617L19.7356 4.07181ZM19.7356 15.8187V15.8241C18.1618 15.8108 16.8271 14.5996 16.5781 12.9587H22.9135C22.661 14.6055 21.3155 15.8164 19.7356 15.8187Z" fill="#788392"></path>
+															</svg>
+                                                        </div>
+                                                        <div class="ok"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M9 1.33398L3.56 6.66732L1 4.15751" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tariff-item">
+                                            <div class="txt">
+                                                <h3>Пакет</h3>
+                                                <div class="tit"><h3>«Премиум»</h3></div>
+                                            </div>
+                                            <table>
+                                                <tr>
+                                                    <td>Франшиза</td>
+                                                    <td>1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Угон</td>
+                                                    <td>10%</td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <ul>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li class="check">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li>
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Кэшбек до 20% на определенные категории покупок</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Бесплатная доставка карт курьером</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <li class="i-hide">
+                                                    <span><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M13 1L4.84 9L1 5.23529" stroke="#788392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                                    <p>Мультивалютная карта (UAH, USD, EUR, GBP, RUB)</p>
+                                                </li>
+                                                <div class="btn btn-show"><p><span class="txt-show">показать все</span><span class="txt-hide">свернуть</span></p><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L5 5.17391L1 1" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 1L5 5.17391L1 1" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                                            </ul>
+                                            
+                                            <div class="bottom">
+                                            	<div class="price">2 050,01 грн</div>
+                                                <div class="flex">
+                                                	<button class="btn">Выбрать</button>
+                                                    <div class="tariff-compare">
+                                                        <div class="tooltips">Добавить в сравнения</div>
+                                                        <div class="ico">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M23.9592 12.2101L23.9388 12.2208L20.4956 3.17235H22.0667C22.3484 3.17235 22.5768 2.93119 22.5768 2.63375C22.5768 2.33631 22.3484 2.09515 22.0667 2.09515H12.4667V0.5386C12.4667 0.241158 12.2383 0 11.9566 0C11.6749 0 11.4465 0.241158 11.4465 0.5386V2.08977H1.85165C1.56995 2.08977 1.34155 2.33092 1.34155 2.62837C1.34155 2.92581 1.56995 3.16697 1.85165 3.16697H3.48905L0.0408077 12.2101C0.0153029 12.2731 0.00146653 12.3408 0 12.4093C0 14.8827 1.89896 16.8878 4.24145 16.8878C6.58393 16.8878 8.48289 14.8827 8.48289 12.4093C8.48142 12.3408 8.46759 12.2731 8.44208 12.2101L4.99894 3.16158H11.4465V19.8151C9.01339 20.009 7.11073 21.5709 7.11073 23.4614C7.11073 23.7588 7.33913 24 7.62083 24H16.2925C16.5742 24 16.8026 23.7588 16.8026 23.4614C16.8026 21.5709 14.8999 20.009 12.4667 19.8151V3.16158H18.9807L15.5579 12.2101C15.5324 12.2731 15.5186 12.3408 15.5171 12.4093C15.5171 14.8827 17.4161 16.8878 19.7586 16.8878C22.101 16.8878 24 14.8827 24 12.4093C23.9985 12.3408 23.9847 12.2731 23.9592 12.2101ZM4.2389 15.8187C2.659 15.8164 1.3135 14.6055 1.061 12.9587H7.39639C7.14517 14.5975 5.81107 15.8059 4.2389 15.8187ZM7.21275 11.8815H1.27524L4.2491 4.06643L7.21275 11.8815ZM15.6905 22.9228H8.21764C8.59511 21.7648 10.1509 20.8707 11.9515 20.8707C13.7522 20.8707 15.3131 21.7648 15.6905 22.9228ZM19.7356 4.07181L22.6993 11.8815H16.7617L19.7356 4.07181ZM19.7356 15.8187V15.8241C18.1618 15.8108 16.8271 14.5996 16.5781 12.9587H22.9135C22.661 14.6055 21.3155 15.8164 19.7356 15.8187Z" fill="#788392"></path>
+															</svg>
+                                                        </div>
+                                                        <div class="ok"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M9 1.33398L3.56 6.66732L1 4.15751" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <script>
+                                $(document).on("ready", function () {
+                                    $(".kasco_offer-tariff .btn").click(function () {
+                                        $(this).toggleClass('btn-hide');
+                                        $(this).parents('ul').toggleClass('i-show');
+                                    });
+                                });
+                            </script>
+                            
+                            <div id="compare-message">
+                            	<div class="flex">
+                                	<div class="ico">
+                                    	<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.932 20.3501L39.898 20.368L34.1594 5.28725H36.7779C37.2474 5.28725 37.6281 4.88532 37.6281 4.38959C37.6281 3.89385 37.2474 3.49192 36.7779 3.49192H20.7779V0.897666C20.7779 0.40193 20.3972 0 19.9277 0C19.4582 0 19.0776 0.40193 19.0776 0.897666V3.48294H3.08608C2.61658 3.48294 2.23592 3.88487 2.23592 4.38061C2.23592 4.87635 2.61658 5.27828 3.08608 5.27828H5.81509L0.0680128 20.3501C0.0255048 20.4552 0.00244421 20.568 0 20.6822C0 24.8045 3.16493 28.1463 7.06908 28.1463C10.9732 28.1463 14.1382 24.8045 14.1382 20.6822C14.1357 20.568 14.1126 20.4552 14.0701 20.3501L8.33156 5.2693H19.0776V33.0251C15.0223 33.3483 11.8512 35.9515 11.8512 39.1023C11.8512 39.5981 12.2319 40 12.7014 40H27.1541C27.6236 40 28.0042 39.5981 28.0042 39.1023C28.0042 35.9515 24.8332 33.3483 20.7779 33.0251V5.2693H31.6344L25.9299 20.3501C25.8874 20.4552 25.8643 20.568 25.8618 20.6822C25.8618 24.8045 29.0268 28.1463 32.9309 28.1463C36.8351 28.1463 40 24.8045 40 20.6822C39.9976 20.568 39.9745 20.4552 39.932 20.3501ZM7.06483 26.3645C4.43167 26.3606 2.18916 24.3425 1.76833 21.5978H12.3273C11.9086 24.3291 9.68512 26.3431 7.06483 26.3645ZM12.0213 19.8025H2.1254L7.08183 6.77738L12.0213 19.8025ZM26.1509 38.2047H13.6961C14.3252 36.2747 16.9182 34.7846 19.9192 34.7846C22.9203 34.7846 25.5218 36.2747 26.1509 38.2047ZM32.8927 6.78636L37.8321 19.8025H27.9362L32.8927 6.78636ZM32.8927 26.3645V26.3734C30.2696 26.3513 28.0452 24.3327 27.6302 21.5978H38.1892C37.7683 24.3425 35.5258 26.3606 32.8927 26.3645Z" fill="white"/></svg>
+                                    	<div class="value">1</div>
+                                    </div>
+                                    <div class="txt">
+                                    	<p>Полис добавлено в сравнения!</p>
+                                        <a href="#" class="go-comparison">перейти к сравнению<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#0A7E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 1L5 5L1 9" stroke="#189851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                //tariff-compare
+								
+								$(document).on("ready", function () {
+                                    $(".tariff-compare").click(function () {
+                                        $(this).toggleClass('add');
+										$('#compare-message').addClass('add');
+                                    });
+									
+									$(document).ready(function() {
+										$('#compare-message').on("mouseenter", function() {
+											$('#compare-message').addClass('add');
+										}).on("mouseleave", function() {
+											function hidemessage() {
+												$('#compare-message').removeClass('add');
+											}
+											setTimeout(hidemessage, 1200);
+										});
+									});
+									
+									
+                                });
+                            </script>
+                            
+                        </div><!-- /left-block -->
+                        
+                        <div class="right-block">
+                            <div class="make-banner banner-block">
+                                <h3>Оформляй и зарабатывай!</h3>
+                                <p>Оформи карту через POLIS.UA и получи персональный промокод на кешбек в 25% на оформление автогражданки</p>
+                                <div class="flex flex_j-flex-end">
+                                	<div class="action">25%</div>
+                                </div>
+                                <div class="img img-car"><img src="img/9.png" alt=""/></div>
+                                <div class="bg">
+									<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 276 367" style="enable-background:new 0 0 276 367;" xml:space="preserve">
+                                    <style type="text/css">
+                                        .st0{opacity:0.1;fill:url(#SVGID_1_);enable-background:new    ;}
+                                        .st1{fill:url(#SVGID_2_);}
+                                    </style>
+                                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="138" y1="367.8898" x2="138" y2="0.8898" gradientTransform="matrix(1 0 0 -1 0 367.8898)">
+                                        <stop  offset="0" style="stop-color:#1487CF"/>
+                                        <stop  offset="0.293" style="stop-color:#1487CF"/>
+                                        <stop  offset="1" style="stop-color:#FFD83A"/>
+                                    </linearGradient>
+                                    <path class="st0" d="M3,367h270c1.7,0,3-1.3,3-3V196.5c0-3.1-4.6-4.4-6.4-1.9c-5.7,7.7-14.6,17.1-23.1,16.2
+                                        c-33.3-3.4-30.4-62.4-60.6-80.6c-27.6-16.6-68.1-2.6-94.2-22.9C55.8,79.4,70.2,2.3,3.1,0C1.4-0.1,0,1.3,0,3v361
+                                        C0,365.7,1.3,367,3,367z"/>
+                                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2.5721" y1="132.9225" x2="293.3577" y2="133.9255" gradientTransform="matrix(1 0 0 -1 0 367.8898)">
+                                        <stop  offset="0" style="stop-color:#1487CF"/>
+                                        <stop  offset="0.2239" style="stop-color:#1487CF"/>
+                                        <stop  offset="0.8229" style="stop-color:#FFD83A"/>
+                                    </linearGradient>
+                                    <path class="st1" d="M3,367h270c1.7,0,3-1.3,3-3V236c0-2.5-2.8-3.9-4.9-2.6c-8,5.3-24.2,14.9-34.7,14.1
+                                        c-33.3-2.7-21.4-44.2-51.6-58.5c-27.6-13.1-48.6,4.4-74.6-11.5c-35.9-21.9-39.5-74-107.1-75.5c-1.7,0-3.1,1.3-3.1,3v259
+                                        C0,365.7,1.3,367,3,367z"/>
+                                    </svg>
+                                </div>
+                            </div><!--make-banner-->
+                            
+                            <div class="banner-video">
+                            	<div class="tit">как оформить полис?</div>
+                                <a href="#"><svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="0.5" width="24" height="17" rx="3.5" stroke="white"/><path d="M18.1092 8.1052L11.5491 4.82517C10.8842 4.49272 10.1019 4.97621 10.1019 5.71959V12.2797C10.1019 13.023 10.8842 13.5065 11.5491 13.1741L18.1092 9.89405C18.8463 9.52553 18.8463 8.47372 18.1092 8.1052Z" fill="white"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="polis-about">
+                	<div class="container">
+                    	<div class="title-block text-center"><h2>Оформление через POLIS.UA - это</h2></div>
+                        <div class="row flex_j-space-between top">
+                        	<div class="item">
+                            	<h3>Действует по всей територии страны</h3>
+                                <p>Полис действует по всей територии страны, оформление онлайн с любого города</p>
+                            </div>
+                            <div class="item">
+                            	<h3>Большой выбор по выгодной цене</h3>
+                                <p>Точный расчет стоимости от топовых страховых компаний страны собрано в одном месте</p>
+                            </div>
+                            <div class="item">
+                            	<h3>Верни 20% при оформлении</h3>
+                                <p>Быстрое оформление с кэшбеком, бонусами и рассрочкой - моментальное занесение в базу МТСБУ</p>
+                            </div>
+                        </div>
+                        <div class="row flex_j-space-between item-2 bottom">
+                        	<div class="item">
+                            	<div class="txt">
+                                    <h2>Оформляй легко через наш чат Polis.Bot !</h2>
+                                    <div class="social-networks">
+                                        <a href="#" class="viber"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.395 8.1026C14.0425 8.0726 13.895 7.80823 13.8588 7.4851C13.7088 6.04198 13.4169 4.57448 12.4088 3.46135C11.3518 2.40469 9.94181 1.77569 8.44942 1.69511C8.08317 1.66886 7.70317 1.55323 7.72192 1.11136C7.72263 1.02768 7.74033 0.945016 7.77393 0.86838C7.80754 0.791745 7.85635 0.722729 7.91742 0.665519C7.97849 0.608308 8.05054 0.564093 8.1292 0.535552C8.20786 0.507011 8.2915 0.494739 8.37505 0.49948C9.32499 0.478895 10.2666 0.680277 11.125 1.08761C12.7142 1.83687 13.96 3.16121 14.6107 4.79323C14.9131 5.6112 15.0615 6.47811 15.0482 7.3501C15.0569 7.77323 14.875 8.14323 14.395 8.1026ZM8.9438 4.39198C9.44668 4.43416 9.92479 4.62852 10.3145 4.94919C10.7041 5.26986 10.9869 5.70161 11.125 6.18698C11.1974 6.37079 11.2264 6.56881 11.2099 6.76565C11.1933 6.9625 11.1315 7.15287 11.0294 7.32198C10.9759 7.3786 10.9116 7.42396 10.8403 7.4554C10.7691 7.48684 10.6922 7.50372 10.6143 7.50506C10.5364 7.5064 10.459 7.49217 10.3867 7.4632C10.3144 7.43423 10.2486 7.3911 10.1932 7.33635C9.90817 7.04573 10.0025 6.5426 9.7938 6.1951C9.69703 6.04707 9.57127 5.92019 9.4241 5.82211C9.27694 5.72404 9.11142 5.65681 8.93755 5.62448C8.5538 5.53135 8.08817 5.4426 8.18317 4.92448C8.2563 4.53073 8.58567 4.40136 8.9438 4.39198ZM7.96755 3.18198C7.94751 3.07981 7.95022 2.97448 7.9755 2.87348C8.00077 2.77248 8.04799 2.67829 8.1138 2.5976C8.47317 2.19948 9.40755 2.50448 9.84005 2.63636C10.4533 2.8248 11.0216 3.13659 11.51 3.5526C11.9912 3.94693 12.3808 4.44117 12.6519 5.00107C12.923 5.56096 13.0691 6.17312 13.08 6.7951C13.08 7.27198 13.0082 7.8351 12.3638 7.7326C11.7825 7.63885 11.8744 6.7776 11.7775 6.34823C11.7112 5.89245 11.5409 5.45806 11.2797 5.07871C11.0185 4.69937 10.6734 4.38526 10.2713 4.16073C9.77193 3.91492 9.23814 3.74633 8.68817 3.66073C8.37505 3.61136 8.0413 3.54073 7.96755 3.18198ZM5.50005 6.14948C5.14817 6.4101 4.82317 6.65385 4.84567 7.1376C4.92966 7.66278 5.14318 8.15876 5.46692 8.58073C6.06543 9.48052 6.88435 10.2121 7.84567 10.7057C8.2863 10.9376 8.85567 11.242 9.28317 10.8201C9.67442 10.4326 9.87567 9.9676 10.4538 9.80823C10.7244 9.75603 11.003 9.76161 11.2713 9.82462C11.5396 9.88763 11.7916 10.0066 12.0107 10.1739C12.59 10.5489 13.1357 10.9739 13.6813 11.392C14.2107 11.797 14.8688 12.3007 14.5094 13.3201C14.2783 13.9142 13.8875 14.4329 13.3801 14.8189C12.8728 15.205 12.2687 15.4433 11.6344 15.5076H11.6188C11.5977 15.5077 11.5767 15.5049 11.5563 15.4995C11.5213 15.4895 11.4732 15.4789 11.4169 15.4664C11.2109 15.4255 11.0092 15.3655 10.8144 15.287C8.54409 14.3352 6.47484 12.9616 4.7163 11.2389C3.74346 10.2669 2.88707 9.18507 2.16442 8.0151C1.79438 7.41673 1.45782 6.79827 1.1563 6.1626C0.787645 5.51251 0.545461 4.79846 0.44255 4.05823C0.420239 3.50005 0.57443 2.94905 0.883209 2.48352C1.19199 2.018 1.63964 1.66164 2.16255 1.46511C2.39309 1.33738 2.65084 1.26666 2.91428 1.25883C3.17772 1.251 3.43921 1.3063 3.67692 1.4201C3.95848 1.60687 4.21116 1.83386 4.42692 2.09386C5.0111 2.72198 5.50787 3.42604 5.9038 4.18698C6.00728 4.34199 6.07896 4.51599 6.11469 4.69891C6.15041 4.88183 6.14947 5.07002 6.11191 5.25258C6.07435 5.43513 6.00093 5.60841 5.8959 5.76237C5.79087 5.91633 5.65632 6.04791 5.50005 6.14948Z" fill="white"/></svg></a>
+                                        <a href="#" class="telegram"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2502 1.62539C15.2059 2.12509 15.1037 2.61796 14.9458 3.09414C13.8015 6.73101 12.4721 10.306 11.1958 13.8985C11.0438 14.3596 10.836 14.8003 10.5771 15.211C10.5088 15.3591 10.4028 15.4867 10.2696 15.5809C10.1364 15.6751 9.98084 15.7326 9.81843 15.7477C9.65601 15.7628 9.49249 15.7349 9.34427 15.6668C9.19604 15.5987 9.06834 15.4928 8.97397 15.3598C8.66337 15.0277 8.40823 14.6479 8.21834 14.2348C7.71459 13.2148 7.20084 12.1973 6.74272 11.1573C6.40669 10.3407 5.76931 9.68473 4.96272 9.32539C3.82584 8.80851 2.69647 8.27414 1.56147 7.75164C1.20635 7.59366 0.885706 7.36751 0.617717 7.08601C0.4955 6.987 0.398858 6.86008 0.335925 6.71593C0.272992 6.57178 0.245611 6.41462 0.256086 6.25768C0.266561 6.10074 0.314585 5.94862 0.396117 5.81411C0.477648 5.6796 0.590302 5.56665 0.724593 5.48476C1.03652 5.25178 1.38893 5.07865 1.76397 4.97414C5.46147 3.67205 9.16063 2.37455 12.8615 1.08164C13.3227 0.913699 13.8027 0.802466 14.2908 0.750386C14.4157 0.718029 14.5466 0.717324 14.6717 0.748334C14.7969 0.779344 14.9123 0.84109 15.0076 0.927977C15.1028 1.01486 15.1749 1.12415 15.2173 1.24593C15.2597 1.3677 15.271 1.49813 15.2502 1.62539Z" fill="white"/></svg></a>
+                                    </div>
+                                    <div class="scan">
+                                        <div class="img"><img src="img/scan.png" alt=""/></div>
+                                        <p>Отсканируйте QR-код на ваш телефон</p>
+                                    </div>
+                                </div>
+                                <div class="img img-absolute"><img src="img/6.png" alt=""/></div>
+                            </div>
+                            <div class="item">
+                            	<div class="txt">
+                                	<h2>Плати там, где выгодно тебе!</h2>
+                                    <p>Больше Х ХХХ ХХХ терминалов самообслуживания по всей Украине</p>
+                                    <div class="btn-block"><a href="#" class="btn">Найти терминал</a></div>
+                                </div>
+                                <div class="img img-absolute img-2"><img src="img/7.png" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                                
+            </div><!-- End #wrapper --> 
+            
+            <footer>
+            	<div class="footer-head">
+                	<div class="container">
+                    	<div class="row flex_j-space-between">
+                        	<div class="item">
+                            	<a href="#" class="logo">
+									<svg width="125" height="40" viewBox="0 0 125 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="l1">
+                                        <path d="M92.8565 0H116.512C118.762 0.00307941 120.92 0.887761 122.511 2.46008C124.102 4.03239 124.997 6.16403 125 8.38761V31.6124C124.997 33.836 124.102 35.9676 122.511 37.5399C120.92 39.1122 118.762 39.9969 116.512 40H8.48764C6.23753 39.9969 4.08048 39.1122 2.48941 37.5399C0.898347 35.9676 0.00311613 33.836 0 31.6124L0 8.38761C0.00311613 6.16403 0.898347 4.03239 2.48941 2.46008C4.08048 0.887761 6.23753 0.00307941 8.48764 0H93.1435V1.17661H8.48764C6.55339 1.17995 4.69933 1.94075 3.33161 3.29235C1.96389 4.64395 1.19402 6.47616 1.19064 8.38761V31.6124C1.19402 33.5238 1.96389 35.356 3.33161 36.7076C4.69933 38.0593 6.55339 38.82 8.48764 38.8234H116.512C118.447 38.82 120.301 38.0593 121.668 36.7076C123.036 35.356 123.806 33.5238 123.809 31.6124V8.38761C123.806 6.47616 123.036 4.64395 121.668 3.29235C120.301 1.94075 118.447 1.17995 116.512 1.17661H92.8565V0Z" fill="url(#paint0_linear)"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear" x1="0" y1="20" x2="125" y2="20" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#FFD83A">
+                                                    <animate attributeName="stop-color" values="#FFD83A; #1487CF; #FFD83A;" dur="2s" repeatCount="indefinite" />
+                                                </stop>
+                                                <stop offset="0.74" stop-color="#1487CF">
+                                                    <animate attributeName="stop-color" values="#1487CF; #FFD83A; #1487CF;" dur="2s" repeatCount="indefinite" />
+                                                </stop>
+                                                <stop offset="1" stop-color="#1487CF">
+                                                    <animate attributeName="stop-color" values="#1487CF;#FFD83A;#1487CF;" dur="2s" repeatCount="indefinite" />
+                                                </stop>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                    <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l2">
+                                        <path d="M2.28559 14.9519H0.630663C0.573881 14.952 0.51768 14.9406 0.465517 14.9184C0.413354 14.8963 0.366333 14.8638 0.327348 14.823C0.288363 14.7822 0.258238 14.7339 0.238827 14.6812C0.219416 14.6285 0.21113 14.5724 0.214478 14.5164V7.45766C0.214478 7.34858 0.258326 7.24397 0.336376 7.16684C0.414426 7.08971 0.520284 7.04638 0.630663 7.04638H4.97607C5.5112 7.05738 6.03189 6.87441 6.43985 6.53201C6.84782 6.18961 7.11483 5.71147 7.1905 5.18785C7.22984 4.89337 7.20498 4.59397 7.11759 4.30976C7.03019 4.02556 6.88229 3.76311 6.6838 3.54005C6.48531 3.31698 6.24084 3.13845 5.96678 3.01645C5.69272 2.89445 5.39543 2.83179 5.09484 2.83268H0.510912C0.400533 2.83268 0.294674 2.78935 0.216624 2.71222C0.138574 2.63509 0.0947266 2.53048 0.0947266 2.4214V0.85873C0.0947266 0.749651 0.138574 0.64504 0.216624 0.56791C0.294674 0.49078 0.400533 0.447449 0.510912 0.447449H4.89166C6.05241 0.437333 7.17692 0.846578 8.05377 1.59824C8.93063 2.34991 9.49944 3.39222 9.65326 4.52922C9.71644 5.16011 9.64523 5.79708 9.44421 6.39912C9.2432 7.00116 8.91684 7.55493 8.48614 8.02478C8.05544 8.49463 7.52994 8.87015 6.94349 9.12715C6.35704 9.38415 5.72263 9.51694 5.0811 9.51697H3.11796C3.00758 9.51697 2.90172 9.5603 2.82367 9.63743C2.74562 9.71457 2.70178 9.81918 2.70178 9.92826V14.5164C2.70513 14.5724 2.69684 14.6285 2.67743 14.6812C2.65802 14.7339 2.62789 14.7822 2.58891 14.823C2.54992 14.8638 2.5029 14.8963 2.45074 14.9184C2.39857 14.9406 2.34237 14.952 2.28559 14.9519Z" fill="#1487CF" />
+                                    </svg>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l3">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.88326 12.5323C10.5938 12.5323 12.7911 10.3608 12.7911 7.68225C12.7911 5.00366 10.5938 2.83223 7.88326 2.83223C5.17273 2.83223 2.97541 5.00366 2.97541 7.68225C2.97541 10.3608 5.17273 12.5323 7.88326 12.5323ZM7.88326 14.9573C11.9491 14.9573 15.245 11.7001 15.245 7.68225C15.245 3.66436 11.9491 0.407227 7.88326 0.407227C3.81746 0.407227 0.521484 3.66436 0.521484 7.68225C0.521484 11.7001 3.81746 14.9573 7.88326 14.9573Z" fill="#1487CF" />
+                                    </svg>
+                                    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l4">
+                                        <path d="M8.37955 14.9504H0.379748C0.275493 14.936 0.180667 14.883 0.114368 14.8022C0.0480691 14.7213 0.0152265 14.6187 0.0224581 14.5149V0.847562C0.0120695 0.74186 0.0434576 0.636283 0.110054 0.552933C0.176651 0.469583 0.273292 0.414922 0.379748 0.400391H2.03468C2.14506 0.400391 2.25091 0.443722 2.32896 0.520852C2.40701 0.597982 2.45086 0.702593 2.45086 0.811672V12.0346C2.45086 12.1437 2.49471 12.2483 2.57276 12.3254C2.65081 12.4026 2.75667 12.4459 2.86705 12.4459H8.31967C8.43005 12.4459 8.53591 12.4892 8.61396 12.5663C8.69201 12.6435 8.73585 12.7481 8.73585 12.8572V14.5159C8.74309 14.6197 8.71024 14.7223 8.64394 14.8031C8.57765 14.8839 8.48282 14.9369 8.37856 14.9514L8.37955 14.9504Z" fill="#1487CF" />
+                                    </svg>
+                                    <svg width="3" height="15" viewBox="0 0 3 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l5">
+                                        <path d="M2.3459 0.446289H0.544721C0.354984 0.446289 0.201172 0.598289 0.201172 0.78579V14.6122C0.201172 14.7997 0.354984 14.9517 0.544721 14.9517H2.3459C2.53564 14.9517 2.68945 14.7997 2.68945 14.6122V0.78579C2.68945 0.598289 2.53564 0.446289 2.3459 0.446289Z" fill="#1487CF" />
+                                    </svg>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l6">
+                                        <path d="M10.5574 3.48144C10.4955 3.56297 10.4053 3.61893 10.3041 3.63846C10.2029 3.658 10.098 3.63972 10.0097 3.58717C8.81794 2.91009 7.42186 2.67259 6.06964 2.91689C4.87899 3.17589 3.62945 4.16432 4.59728 5.37585C5.20487 6.14021 6.76361 6.35264 7.63328 6.71737C8.9076 7.08464 10.0562 7.789 10.9549 8.75437C12.6815 11.1076 10.8244 14.1864 8.16922 14.7538C5.73415 15.1397 3.2402 14.6367 1.15295 13.3386C1.10802 13.3073 1.06981 13.2675 1.04053 13.2215C1.01124 13.1756 0.991464 13.1243 0.982338 13.0707C0.973211 13.0172 0.974915 12.9623 0.987352 12.9094C0.999788 12.8565 1.02271 12.8065 1.0548 12.7624L1.69772 11.8681C1.74378 11.8008 1.80951 11.7489 1.88614 11.7194C1.96278 11.69 2.04668 11.6843 2.12667 11.7032C3.61473 12.033 10.4602 13.3968 9.07913 10.5266C8.60307 9.25586 5.50818 8.75049 4.41275 8.23251C2.43685 7.32653 1.10289 5.24393 2.11489 3.11478C3.69816 -0.225914 8.56675 0.204768 11.2572 1.93816C11.3039 1.96949 11.3435 2.00986 11.3739 2.05681C11.4043 2.10376 11.4246 2.15631 11.4338 2.21128C11.443 2.26625 11.4408 2.32249 11.4273 2.37659C11.4138 2.43069 11.3894 2.48151 11.3554 2.52598L10.5574 3.48144Z" fill="#1487CF" />
+                                    </svg>
+                                    <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="l7">
+                                        <path d="M10.4387 0.400391H8.77008C8.6597 0.400391 8.55384 0.443722 8.47579 0.520852C8.39774 0.597982 8.3539 0.702593 8.3539 0.811672V9.80942C8.35251 10.2309 8.25607 10.6467 8.07158 11.0267C7.8871 11.4067 7.61922 11.7412 7.28743 12.006C6.95564 12.2708 6.56828 12.4592 6.15355 12.5574C5.73882 12.6557 5.30714 12.6613 4.88993 12.5739C4.23933 12.4308 3.65832 12.071 3.24439 11.5547C2.83046 11.0385 2.60881 10.3972 2.61662 9.73861V0.847562C2.61662 0.738484 2.57277 0.633873 2.49472 0.556743C2.41667 0.479612 2.31081 0.43628 2.20043 0.43628H0.570046C0.459667 0.43628 0.353802 0.479612 0.275752 0.556743C0.197702 0.633873 0.153857 0.738484 0.153857 0.847562V9.62318C0.135376 10.9285 0.595024 12.1965 1.44807 13.1933C2.30111 14.1902 3.49005 14.8487 4.79571 15.0474C5.55015 15.1443 6.31681 15.0812 7.04467 14.8624C7.77253 14.6437 8.44489 14.2742 9.01701 13.7787C9.58914 13.2831 10.0479 12.6729 10.3628 11.9885C10.6777 11.3041 10.8414 10.5612 10.8432 9.80942V0.847562C10.8481 0.79158 10.8415 0.735182 10.8235 0.68185C10.8056 0.628519 10.7768 0.579387 10.7389 0.537484C10.701 0.495581 10.6548 0.461797 10.6032 0.438218C10.5516 0.41464 10.4956 0.401765 10.4387 0.400391Z" fill="url(#paint0_linear)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear" x1="-0.391943" y1="7.76065" x2="22.8405" y2="7.76065" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1487CF" />
+                                                <stop offset="1" stop-color="#FFD83A" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="l8">
+                                        <path d="M13.9493 14.4222L9.98574 0.611313C9.95995 0.527949 9.90803 0.454839 9.83746 0.402535C9.76689 0.350231 9.68132 0.321438 9.59311 0.320312H5.42635C5.33815 0.321438 5.25258 0.350231 5.18201 0.402535C5.11144 0.454839 5.05951 0.527949 5.03372 0.611313L0.911133 14.9518H3.16874C3.25695 14.9507 3.34251 14.9219 3.41308 14.8696C3.48365 14.8173 3.53558 14.7442 3.56137 14.6608L4.75201 10.5199C4.7778 10.4365 4.82973 10.3634 4.9003 10.3111C4.97087 10.2588 5.05643 10.23 5.14464 10.2289H9.83458C9.92279 10.23 10.0083 10.2588 10.0789 10.3111C10.1495 10.3634 10.2014 10.4365 10.2272 10.5199L11.4179 14.6608C11.4436 14.7442 11.4956 14.8173 11.5661 14.8696C11.6367 14.9219 11.7223 14.9507 11.8105 14.9518H13.5243C13.5907 14.9546 13.6567 14.9417 13.717 14.9141C13.7773 14.8865 13.83 14.845 13.8707 14.7932C13.9115 14.7413 13.9391 14.6806 13.9512 14.6161C13.9633 14.5515 13.9597 14.4851 13.9405 14.4222H13.9493ZM8.90209 7.7515H6.09284C6.02877 7.75188 5.96548 7.73763 5.9079 7.70987C5.85031 7.68211 5.79999 7.64159 5.76086 7.59146C5.72172 7.54133 5.69482 7.48295 5.68226 7.42087C5.6697 7.35878 5.67181 7.29467 5.68843 7.23352L6.87907 3.0693C6.90051 2.97916 6.9521 2.89881 7.02549 2.84124C7.09889 2.78368 7.18978 2.75227 7.28348 2.75211H7.73598C7.8262 2.75074 7.91443 2.77838 7.98737 2.83086C8.06031 2.88335 8.11402 2.95784 8.14039 3.04311L9.33104 7.20733C9.35308 7.27194 9.35853 7.34095 9.34688 7.40815C9.33524 7.47535 9.30687 7.53864 9.26433 7.59232C9.22179 7.646 9.16641 7.68838 9.10318 7.71566C9.03995 7.74294 8.97085 7.75426 8.90209 7.74859V7.7515Z" fill="url(#paint0_linear)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear" x1="-12.3969" y1="7.62163" x2="10.84" y2="7.62163" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1487CF" />
+                                                <stop offset="1" stop-color="#FFD83A" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </a><!-- /logo -->
+                                <p>Polis.ua - cайт сравнения страховок, депозитов, кредитов и кредитных карт. Осознанные финансовые решения в несколько кликов.</p>
+                            </div>
+                            
+                            <nav class="item">
+                            	<ul>
+                                	<li class="tit">Частным лицам</li>
+                                    <li><a href="#">ОСАГО</a></li>
+                                    <li><a href="#">Туристическое страхование</a></li>
+                                    <li><a href="#">КАСКО</a></li>
+                                    <li><a href="#">Зеленая карта</a></li>
+                                    <li><a href="#">Талоны на топливо</a></li>
+                                    <li><a href="#">Онлайн-кредиты</a></li>
+                                    <li><a href="#">Кредитные карты</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="item">
+                            	<ul>
+                                	<li class="tit">бизнесу</li>
+                                    <li><a href="#">Платформа для бизнеса</a></li>
+                                    <li><a href="#">Реферальна програма</a></li>
+                                    <li><a href="#">Стать партнером</a></li>
+                                    <li><a href="#">Документация API</a></li>
+                                    <li><a href="#">Правила та условия</a></li>
+                                    <li><a href="#">Благотворительность</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="item">
+                            	<ul>
+                                	<li class="tit">компания</li>
+                                    <li><a href="#">O Polis.ua</a></li>
+                                    <li><a href="#">Партнери</a></li>
+                                    <li><a href="#">Контакти</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="item">
+                            	<ul>
+                                	<li class="tit">Дополнительно</li>
+                                    <li><a href="#">Политика конфиденциальности</a></li>
+                                    <li><a href="#">Публичная оферта</a></li>
+                                    <li><a href="#">Как сделать заказ/a></li>
+                                    <li><a href="#">Оплата</a></li>
+                                    <li><a href="#">Частые вопросы</a></li>
+                                    <li><a href="#">Карта сайта</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div><!-- footer-head -->
+            </footer>
+        </div><!-- End #main -->
+       
+	   <script src="js/ion.rangeSlider.js"></script>
+       <script>
+	   	//RANGE
+			//range-volume
+			var $range_volume = $("#range-volume"),
+				instance,
+				min = 0,
+				max = 6000;
+			$range_volume.ionRangeSlider({
+				hide_min_max: true,
+				grid: true,
+				type: "single",
+				min: min,
+				max: max,
+				from: 2000,
+				postfix: "см3",
+			});
+			
+			//range-milage
+			var $range_milage = $("#range-milage"),
+				instance,
+				min = 0,
+				max = 60;
+			$range_milage.ionRangeSlider({
+				hide_min_max: true,
+				grid: true,
+				type: "single",
+				min: min,
+				max: max,
+				from: 10,
+				postfix: " т. км.",
+			});
+			
+			//range-volume2
+			var $range_volume = $("#range-volume2"),
+				instance,
+				min = 0,
+				max = 6000;
+			$range_volume.ionRangeSlider({
+				hide_min_max: true,
+				grid: true,
+				type: "single",
+				min: min,
+				max: max,
+				from: 2000,
+				postfix: "см3",
+			});
+			
+			//range-milage2
+			var $range_milage = $("#range-milage2"),
+				instance,
+				min = 0,
+				max = 60;
+			$range_milage.ionRangeSlider({
+				hide_min_max: true,
+				grid: true,
+				type: "single",
+				min: min,
+				max: max,
+				from: 10,
+				postfix: " т. км.",
+			});
+			
+		</script>
+        
+        
+        
+	   <script src="js/main.js"></script>
+	</body>
+</html>
